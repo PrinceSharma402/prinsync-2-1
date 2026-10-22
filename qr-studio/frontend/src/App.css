@@ -458,20 +458,6 @@ input[type='range'] {
   word-break: break-all;
 }
 
-.footer {
-  margin-top: auto;
-  padding: 16px 20px;
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-}
-
-.footer p {
-  max-width: 1040px;
-  margin: 0 auto;
-  font-size: 12.5px;
-  color: var(--muted);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .spinner {
     animation: none;
