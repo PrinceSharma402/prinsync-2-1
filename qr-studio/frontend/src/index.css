@@ -1,0 +1,67 @@
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --border: #e2dfd8;
+  --border-strong: #cbc7be;
+  --text: #22262c;
+  --muted: #6d7280;
+  --accent: #1e5aa8;
+  --accent-dark: #17437c;
+  --accent-soft: #eef3fa;
+  --danger: #a9251c;
+  --danger-soft: #fdf3f2;
+  --warning: #8a5b00;
+  --warning-soft: #fdf7e6;
+  --ok: #1f7a4d;
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
