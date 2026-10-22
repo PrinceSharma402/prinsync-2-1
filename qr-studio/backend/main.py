@@ -1,10 +1,12 @@
 import re
+import os
 from datetime import datetime
 from typing import Optional
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import Response
+from fastapi.responses import Response, FileResponse
+from fastapi.staticfiles import StaticFiles
 from PIL import Image
 from io import BytesIO
 
@@ -118,8 +120,12 @@ async def read_logo_bytes(logo):
     return image_bytes
 
 
+frontend_path = os.path.join(os.path.dirname(__file__), "../frontend/dist")
+
 @app.get("/")
 def api_information():
+    if os.path.exists(os.path.join(frontend_path, "index.html")):
+        return FileResponse(os.path.join(frontend_path, "index.html"))
     return {
         "name": "PrinSync 2.1 API",
         "version": "2.1",
@@ -132,6 +138,9 @@ def api_information():
             "POST /generate-barcode",
         ],
     }
+
+if os.path.exists(frontend_path):
+    app.mount("/assets", StaticFiles(directory=os.path.join(frontend_path, "assets")), name="static")
 
 
 @app.get("/health")
