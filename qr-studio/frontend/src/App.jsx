@@ -937,13 +937,6 @@ export default function App() {
           </aside>
         </div>
       </main>
-
-      <footer className="footer">
-        <p>PrinSync 2.1 - BCA mini project. Codes are created by the local FastAPI server.</p>
-        <p className="hint">
-          Test the final QR or barcode with a real scanner app before you print or submit it.
-        </p>
-      </footer>
     </div>
   )
 }
